@@ -1,0 +1,15 @@
+<h1><%= t 'articles.index.title' %></h1>
+
+<table>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= link_to article.title, article_path(article.id) %></td>
+      <td><%= excerpt(article.text, '', radius: 100) %></td>
+      <td><%= article.created_at %></td>
+      <td><%= link_to t('articles.index.edit_link'), edit_article_path(article.id) %></td>
+      <td><%= link_to t('articles.index.delete_link'), article_path(article.id), method: :delete, data: { confirm: t('articles.index.delete_confirm') } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t('articles.index.new_link'), new_article_path %>

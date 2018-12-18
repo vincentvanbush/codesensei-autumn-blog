@@ -1,0 +1,40 @@
+pl:
+  flash:
+    success: Sukces
+    notice: Informacja
+    alert: Uwaga
+    error: Błąd
+  hello: "Witaj świecie"
+  foo:
+    bar: knajpa
+  articles:
+    create:
+      success: Artykuł został utworzony.
+      error: 'Nie można utworzyć artykułu: %{problems}'
+    new:
+      title: Nowy artykuł
+      index_link: Wróć do listy
+    show:
+      index_link: Wróć do listy
+    index:
+      new_link: Nowy artykuł
+      title: Artykuły
+      edit_link: Edytuj
+      delete_link: Usuń
+      delete_confirm: Czy na pewno usunąć?
+  activerecord:
+    errors:
+      models:
+        article:
+          attributes:
+            text:
+              cannot_contain_title: nie może zawierać tytułu artykułu
+    models:
+      article: Artykuł
+    attributes:
+      article:
+        title: Tytuł artykułu
+        text: Tekst artykułu
+  helpers:
+    submit:
+      create: Utwórz %{model}
