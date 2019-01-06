@@ -5,3 +5,15 @@
 </p>
 
 <%= link_to t('articles.show.index_link'), articles_path %>
+
+<%= simple_form_for @comment, url: article_comments_path(@article.id) do |f| %>
+  <%= f.input :commenter %>
+  <%= f.input :body %>
+  <%= f.button :submit %>
+<% end %>
+
+<% @article.comments.reject(&:new_record?).each do |comment| %>
+  <div>
+    <strong><%= comment.commenter %></strong>: <%= comment.body %>
+  </div>
+<% end %>
