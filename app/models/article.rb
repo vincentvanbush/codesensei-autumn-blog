@@ -1,10 +1,11 @@
 class Article < ApplicationRecord
+  belongs_to :user
   has_many :comments, dependent: :destroy
 
   before_validation :strip_html_tags, if: :text
   before_save :bold_markdown, if: :text
 
-  validates :title, :text, :author, presence: true
+  validates :title, :text, presence: true
   validates :title, length: { minimum: 5, maximum: 40 }
   validates :title, uniqueness: true, if: :title_changed?
   validates :terms_of_service, acceptance: true
