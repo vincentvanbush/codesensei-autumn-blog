@@ -2,5 +2,7 @@
 <p>Find me in app/views/pictures/index.html.erb</p>
 
 <% @pictures.each do |picture| %>
-  <%= image_tag picture.image.thumb.url, alt: "#{picture.title}: #{picture.description}" %>
+  <%= link_to article_picture_path(@article, picture) do %>
+    <%= image_tag picture.image.thumb.url, alt: "#{picture.title}: #{picture.description}" %>
+  <% end %>
 <% end %>
