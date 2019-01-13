@@ -47,6 +47,7 @@ class PicturesController < ApplicationController
   def show
     @article = Article.find(params[:article_id])
     @picture = @article.pictures.find(params[:id])
+    @comment = @picture.comments.new
     authorize! :show, @picture
   end
 
