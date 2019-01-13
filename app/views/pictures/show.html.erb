@@ -28,3 +28,18 @@
 </p>
 
 <p><%= @picture.description %></p>
+
+<%
+  # TODO: Wyciągnąć to do partiala i zastosować to samo w views/articles/show.html.erb
+%>
+<%= simple_form_for @comment, url: article_picture_comments_path(@article.id, @picture.id) do |f| %>
+  <%= f.input :commenter %>
+  <%= f.input :body %>
+  <%= f.button :submit %>
+<% end %>
+
+<% @picture.comments.reject(&:new_record?).each do |comment| %>
+  <div>
+    <strong><%= comment.commenter %></strong>: <%= comment.body %>
+  </div>
+<% end %>
