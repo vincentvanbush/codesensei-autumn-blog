@@ -1,0 +1,30 @@
+<h1><%= @picture.title %></h1>
+
+<%=
+  link_to(
+    t('pictures.show.back_to_article', default: 'Wróć do artykułu'), article_path(@article)
+  )
+%>
+
+<%=
+  link_to(
+    t('pictures.show.edit_link', default: 'Edytuj'), edit_article_picture_path(@article, @picture)
+  )
+%>
+
+<%=
+  link_to(
+    t('pictures.show.destroy_link', default: 'Usuń'),
+    article_picture_path(@article, @picture),
+    method: :delete,
+    data: {
+      confirm: t('pictures.show.delete_confirm', default: 'Na pewno usunąć?')
+    }
+  )
+%>
+
+<p>
+  <%= image_tag(@picture.image.url, alt: @picture.description) %>
+</p>
+
+<p><%= @picture.description %></p>
