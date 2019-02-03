@@ -74,3 +74,9 @@ gem 'mini_magick'
 gem 'bootstrap'
 
 gem 'haml-rails'
+
+gem 'jquery-rails'
+
+gem 'babel-transpiler'
+
+gem 'sprockets', '~> 4.0.0.beta2'

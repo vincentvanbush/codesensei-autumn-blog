@@ -5,6 +5,8 @@
       = link_to t('nav.articles', default: 'Artykuły'), articles_path, class: 'nav-link'
     %li.nav-item
       = link_to t('nav.new_article', default: 'Nowy artykuł'), new_article_path, class: 'nav-link'
+  %div.mr-3#js-weather
+    &nbsp;
   %div
     - if user_signed_in?
       %small
