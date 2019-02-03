@@ -1,0 +1,7 @@
+%h1 Pictures#new
+%p Find me in app/views/pictures/new.html.erb
+= simple_form_for(@picture, url: article_pictures_path(@article.id)) do |f|
+  = f.input :title
+  = f.input :description
+  = f.input :image
+  = f.button :submit

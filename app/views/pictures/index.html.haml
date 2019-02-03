@@ -1,0 +1,5 @@
+%h1 Pictures#index
+%p Find me in app/views/pictures/index.html.erb
+- @pictures.each do |picture|
+  = link_to article_picture_path(@article, picture) do
+    = image_tag picture.image.thumb.url, alt: "#{picture.title}: #{picture.description}"
