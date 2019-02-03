@@ -1,7 +1,6 @@
 .flash
   - flash.each do |k, v|
-    %div{:class => "alert alert-#{bootstrap_flash_color(k)}"}
+    .alert{class: "alert-#{bootstrap_flash_color(k)}"}
       %strong
-        = t "flash.#{k}"
-        \:
+        = t("flash.#{k}") + ':'
       = v

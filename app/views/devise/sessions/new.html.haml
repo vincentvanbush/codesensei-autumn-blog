@@ -1,10 +1,7 @@
 %h2= t 'sessions.new.title', default: 'Zaloguj się'
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .form-inputs
-    = f.input :email,                       |
-      required: false,                      |
-      autofocus: true,                      |
-      input_html: { autocomplete: "email" } |
+    = f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" }
     = f.input :password,                               |
       required: false,                                 |
       input_html: { autocomplete: "current-password" } |
