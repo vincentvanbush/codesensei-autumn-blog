@@ -1,18 +1,22 @@
 <h1><%= t 'articles.index.title' %></h1>
 
-<table>
+<table class="table">
   <% @articles.each do |article| %>
     <% if can?(:read, article) %>
       <tr>
         <td><%= link_to article.title, article_path(article.id) %></td>
         <td><%= excerpt(article.text, '', radius: 100) %></td>
         <td><%= article.created_at %></td>
-        <% if can?(:update, article) %>
-          <td><%= link_to t('articles.index.edit_link'), edit_article_path(article.id) %></td>
-        <% end %>
-        <% if can?(:destroy, article) %>
-          <td><%= link_to t('articles.index.delete_link'), article_path(article.id), method: :delete, data: { confirm: t('articles.index.delete_confirm') } %></td>
-        <% end %>
+        <td>
+          <% if can?(:update, article) %>
+            <%= link_to t('articles.index.edit_link'), edit_article_path(article.id) %></td>
+          <% end %>
+        </td>
+        <td>
+          <% if can?(:destroy, article) %>
+            <%= link_to t('articles.index.delete_link'), article_path(article.id), method: :delete, data: { confirm: t('articles.index.delete_confirm') } %></td>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   <% end %>

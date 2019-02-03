@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand navbar-dark bg-success mb-4">
+  <%= link_to 'Blog', root_path, class: 'navbar-brand' %>
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <%= link_to t('nav.articles', default: 'Artykuły'), articles_path, class: 'nav-link' %>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to t('nav.new_article', default: 'Nowy artykuł'), new_article_path, class: 'nav-link' %>
+    </li>
+  </ul>
+
+  <div>
+    <% if user_signed_in? %>
+      <small>Witaj, <%= current_user.email %>!</small>
+      <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-info ml-1' %>
+    <% else %>
+      <small>Witaj!</small>
+      <%= link_to 'Zaloguj się', new_user_session_path, class: 'btn btn-sm btn-info ml-1' %>
+    <% end %>
+  </div>
+</nav>

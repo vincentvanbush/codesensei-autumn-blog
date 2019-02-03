@@ -70,3 +70,7 @@ gem 'cancancan'
 gem 'carrierwave'
 
 gem 'mini_magick'
+
+gem 'bootstrap'
+
+gem 'haml-rails'
