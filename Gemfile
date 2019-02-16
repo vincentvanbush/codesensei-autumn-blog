@@ -86,3 +86,5 @@ gem 'sidekiq'
 gem 'sidekiq-cron'
 
 gem 'sendgrid-actionmailer'
+
+gem 'omniauth-google-oauth2'
