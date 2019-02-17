@@ -26,3 +26,5 @@
 
 # Database.yml file should be created by the developer
 /config/database.yml
+
+.env
